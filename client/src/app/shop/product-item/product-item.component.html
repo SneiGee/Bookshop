@@ -1,0 +1,32 @@
+<div class="single-product">
+    <div class="product-img">
+        <a routerLink="/shop/{{product.id}}">
+            <img class="default-img bg-info" src="{{ product.pictureUrl }}" alt="{{ product.name }}">
+            <!-- <img class="hover-img" src="https://via.placeholder.com/488x488" alt="#"/> -->
+        </a>
+        <div class="button-head">
+            <div class="product-action">
+                <a data-toggle="modal" data-target="#exampleModal" title="Quick View">
+                    <i class="ti-eye"></i><span>Quick Shop</span>
+                </a>
+                <a title="Wishlist" href="#">
+                    <i class="ti-heart"></i><span>Add to Wishlist</span>
+                </a>
+                <a routerLink="/shop/{{product.id}}" title="View Full Detail">
+                    <i class="ti-bar-chart-alt"></i><span>View Detail</span>
+                </a>
+            </div>
+            <div class="product-action-2">
+                <a title="Add to cart" >Add to cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="product-content">
+        <h3><a routerLink="/shop/{{product.id}}">{{ product.name }}</a></h3>
+        <div class="product-price">
+            <span>{{ product.price | currency }}</span>
+        </div>
+    </div>
+</div>
+
+

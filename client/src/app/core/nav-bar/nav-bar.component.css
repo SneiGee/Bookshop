@@ -558,7 +558,7 @@
 	background:#F7941D;
 	color:#fff;
 }
-.header.shop .search-bar form {
+.header.shop .search-bar .form {
 	display: inline-block;
 	float: left;
 	width: 260px;
@@ -572,7 +572,8 @@
 	font-size: 14px;
 	font-weight: 400;
 	padding: 0 25px 0 20px;
-	width: 328px;
+	width: 500px;
+	border-radius: 2px solid #F7941D;
 }
 .header.shop .search-bar .btnn {
 	height: 50px;
@@ -1074,3 +1075,6 @@
 /*======================================
 	End Header CSS
 ========================================*/
+
+
+
