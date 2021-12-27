@@ -26,11 +26,13 @@
     "jquery.fancybox": "^2.1.5",
     "magnific-popup": "^1.1.0",
     "ngx-bootstrap": "^6.2.0",
+    "ngx-toastr": "^14.2.1",
     "owl.carousel": "^2.3.4",
     "rxjs": "~7.4.0",
     "slicknav": "^1.0.8",
     "themify-icons": "^1.0.0",
     "tslib": "^2.3.0",
+    "xng-breadcrumb": "^6.8.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

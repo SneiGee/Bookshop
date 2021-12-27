@@ -333,40 +333,25 @@ big {
 }
 /* Bread Crumbs */
 .breadcrumbs {
-	background-color: #F6F7FB;
+	background-color: #e9ecef;
 	position: relative;
-	padding: 30px 0px;
+	padding: 25px 0px;
 }
-.breadcrumbs .bread-inner {
-	z-index: 22;
-	text-align: left;
+.xng-breadcrumb-root {
+    padding: 8px 16px;
+    display: inline;
+    border-radius: 0;
 }
-.breadcrumbs .bread-list {
-	display: inline-block;
+
+label.xng-breadcrumb-trail {
+    margin-bottom: 0;
+    color: orange;
 }
-.breadcrumbs ul li{
-	display: inline-block;
-	position: relative;
+
+.xng-breadcrumb-separator {
+    padding: 0 0;
 }
-.breadcrumbs ul li i {
-	margin: 0px 10px;
-	font-size: 9px;
-	font-weight: 600;
-	color: #333;
-}
-.breadcrumbs ul li a {
-	color: #333;
-	font-size: 14px;
-	font-weight: 400;
-	text-transform: capitalize;
-}
-.breadcrumbs ul li.active a {
-	color: #333;
-	display: inline-block;
-}
-.breadcrumbs ul li a:hover{
-	color:#F7941D;
-}
+
 /*=============================
 	Start Demos CSS 
 ===============================*/
