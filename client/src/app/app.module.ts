@@ -22,8 +22,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    CoreModule,
-    HomeModule
+    CoreModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

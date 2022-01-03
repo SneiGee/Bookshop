@@ -8,13 +8,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     NavBarComponent, TestErrorComponent, ServerErrorComponent, NotFoundComponent, 
-    SectionHeaderComponent
+    SectionHeaderComponent, FooterComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +26,6 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
       preventDuplicates: true
     })
   ],
-  exports: [NavBarComponent, SectionHeaderComponent]
+  exports: [NavBarComponent, SectionHeaderComponent, FooterComponent]
 })
 export class CoreModule { }

@@ -1,0 +1,99 @@
+.about {
+	padding-right: 50px;
+}
+.single-footer h4 {
+	font-size: 17px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+}
+.about .logo{
+	margin-bottom:20px;
+}
+.about .logo img{}
+.about .text{
+	color:#fff;
+	font-weight: 400;
+}
+.about .call {
+	color: #fff;
+	margin-top: 15px;
+	font-weight: 400;
+}
+.about .call span{
+	display: block;
+}
+.about .call a {
+	color: #f7941d;
+	font-size: 20px;
+	font-weight: 600;
+}
+.links ul{}
+.links ul li {
+	display: block;
+	margin-bottom: 8px;
+}
+.links ul li:last-child{
+	margin-bottom:0;
+}
+.links ul li a{
+	color:#fff;
+	font-weight: 400;
+}
+.links ul li a:hover{
+	color:#F7941D;
+	padding-left:10px;
+}
+.social{}
+.social .contact{}
+.social .contact ul{}
+.social .contact ul li {
+	color: #fff;
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 400;
+}
+.contact ul li:last-child{
+	margin-bottom:0;
+}
+.social ul {
+	margin-top: 20px;
+}
+.social ul li{
+	display:inline-block;
+	margin-right:25px;
+}
+.social ul li:last-child{
+	margin-right:0;
+}
+.social ul li a{
+	color:#fff;
+	display:block;
+	font-size:16px;
+}
+.social ul li a:hover{
+	color:#F7941D;
+}
+/* Copyright */
+.copyright{
+	
+}
+.copyright .inner{
+	border-top:1px solid #eeeeee3d;
+	padding:20px 0;
+}
+.copyright .left{}
+.copyright .right{
+	float:right;
+}
+.copyright p{
+	color:#fff;
+}
+.copyright p a{
+	color:#fff;
+	text-decoration:underline;
+}
+/*=============================
+	End Footer CSS
+===============================*/

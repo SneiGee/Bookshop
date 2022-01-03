@@ -3,6 +3,10 @@
 /*======================================
    Start Shop Sidebar CSS
 ========================================*/
+.shop {
+	margin-top: -70px;
+}
+
 .shop-sidebar .single-widget {
 	margin-top: 30px;
 	background: #F6F7FB;
