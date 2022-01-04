@@ -1,3 +1,7 @@
 {
-    "omnisharp.projectLoadTimeout": 80
+    "omnisharp.projectLoadTimeout": 80,
+    "redisXplorer.config": {
+        "profiles": [],
+        "scanLimit": 200
+    }
 }
