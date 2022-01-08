@@ -6,11 +6,13 @@ import { TestErrorComponent } from './core/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)},
+  {path: '', loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule), data: {breadcrumb: 'Home'}},
   {path: 'test-error', component: TestErrorComponent, data: {breadcrumb: 'Test Error'}},
   {path: 'not-found', component: NotFoundComponent, data: {breadcrumb: 'Not foubd'}},
   {path: 'server-error', component: ServerErrorComponent, data: {breadcrumb: 'Server Error'}},
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule), data: {breadcrumb: 'Shop'}},
+  {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule), data: {breadcrumb: 'Basket'}},
+  {path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data: {breadcrumb: 'Checkout'}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 

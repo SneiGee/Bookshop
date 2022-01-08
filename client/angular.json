@@ -36,7 +36,6 @@
               "src/themify-icons.css"
             ],
             "scripts": [
-              "src/styles.js"
             ]
           },
           "configurations": {
