@@ -1,0 +1,47 @@
+<ng-container *ngIf="(basket$ | async) as basket">
+    <!-- Shopping Summery -->
+    <table class="table shopping-summery">
+        <thead [class.thead]="isBasket">
+            <tr class="main-hading">
+                <th>PRODUCT</th>
+                <th>NAME</th>
+                <th class="text-center">PRICE</th>
+                <th class="text-center">QUANTITY</th>
+                <th class="text-center">TOTAL</th> 
+                <th *ngIf="isBasket" class="text-center"><i class="ti-trash remove-icon"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of basket.items">
+                <td class="image"><img src="{{item.pictureUrl}}" alt="#"></td>
+                <td class="product-des">
+                    <p class="product-name"><a routerLink="/shop/{{item.id}}">{{item.productName}}s</a></p>
+                    <p class="product-Cate font-italic">
+                        <span class="text-muted">Category:</span> {{item.brand}}
+                    </p>
+                </td>
+                <td class="price"><span>{{item.price | currency}} </span></td>
+                <td class="qty"><!-- Input Order -->
+                    <div class="input-group">
+                        <div class="button minus">
+                            <button *ngIf="isBasket" (click)="decrementItemQuantity(item)" type="button" class="btn btn-primary btn-number">
+                                <i class="ti-minus"></i>
+                            </button>
+                        </div>
+                        <input disabled="true" class="input-number" value="{{item.quantity}}">
+                        <div class="button plus">
+                            <button *ngIf="isBasket" (click)="incrementItemQuantity(item)" type="button" class="btn btn-primary btn-number">
+                                <i class="ti-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--/ End Input Order -->
+                </td>
+                <td class="total-amount"><span>{{item.price * item.quantity | currency}}</span></td>
+                <td *ngIf="isBasket" class="action"><a><i (click)="removeBasketItem(item)" class="ti-trash remove-icon"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--/ End Shopping Summery -->
+</ng-container>
+
