@@ -15,6 +15,7 @@ export interface IOrder {
     shippingPrice: number;
     orderItems: IOrderItem[];
     subtotal: number;
+    total: number;
     status: string;
   }
 

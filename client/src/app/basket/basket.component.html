@@ -8,6 +8,7 @@
                     (decrement)="decrementItemQuantity($event)"
                     (increment)="incrementItemQuantity($event)"
                     (remove)="removeBasketItem($event)"
+                    [items]="(basket$ | async).items"
                 ></app-basket-summary>
                 <!--/ End Shopping Summery -->
             </div>
@@ -16,7 +17,12 @@
 
         <div class="row">
             <div class="col-4 offset-8">
-                <app-order-totals></app-order-totals>
+                <app-order-totals
+                    *ngIf="(basketTotals$ | async)"
+                    [shippingPrice]="(basketTotals$ | async).shipping"
+                    [subtotal]="(basketTotals$ | async).subtotal"
+                    [total]="(basketTotals$ | async).total"
+                ></app-order-totals>
                 <div class="button5">
                     <a routerLink="/checkout" class="btn">Proceed Checkout</a>
                     <a routerLink="/shop" class="btn">Continue shopping</a>

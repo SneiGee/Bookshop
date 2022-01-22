@@ -14,6 +14,7 @@ namespace API.Dto
 		public decimal ShippingPrice { get; set; }
         public IReadOnlyList<OrderItemDto> OrderItems { get; set; }
         public decimal Subtotal { get; set; }
+        public decimal Total { get; set; }
         public string Status { get; set; }
     }
 }

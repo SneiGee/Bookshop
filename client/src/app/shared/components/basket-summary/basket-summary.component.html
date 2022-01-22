@@ -1,7 +1,7 @@
-<ng-container *ngIf="(basket$ | async) as basket">
+<ng-container *ngIf="items.length > 0" >
     <!-- Shopping Summery -->
     <table class="table shopping-summery">
-        <thead [class.thead]="isBasket">
+        <thead [class.thead]="isBasket || isOrder">
             <tr class="main-hading">
                 <th>PRODUCT</th>
                 <th>NAME</th>
@@ -12,11 +12,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of basket.items">
+            <tr *ngFor="let item of items">
                 <td class="image"><img src="{{item.pictureUrl}}" alt="#"></td>
                 <td class="product-des">
-                    <p class="product-name"><a routerLink="/shop/{{item.id}}">{{item.productName}}s</a></p>
-                    <p class="product-Cate font-italic">
+                    <p class="product-name"><a routerLink="/shop/{{item.id || item.productId}}">{{item.productName}}</a></p>
+                    <p *ngIf="item.type" class="product-Cate font-italic">
                         <span class="text-muted">Category:</span> {{item.brand}}
                     </p>
                 </td>
