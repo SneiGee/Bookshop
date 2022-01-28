@@ -24,11 +24,9 @@
               <h3 class="title">Brands</h3>
               <ul class="categor-list">
                 <li *ngFor="let category of brands"
-                    [class.active]="category.id === this.shopParams.brandId"
-                    [value]="category.id"
-                    (click)="onBrandSelected(category.id)"
-                >
-                  {{category.name}}
+                    [class.active]="category.id === this.shopParams.brandId" [value]="category.id"
+                    (click)="onBrandSelected(category.id)">
+                    {{category.name}}
                 </li>
               </ul>
             </div>
@@ -108,14 +106,20 @@
                 </select> -->
 
                   <div class="form-inline">
-                    <input (keyup.enter)="onSearch()" type="text" #search class="form-control mr-1" style="width: 380px;" placeholder="Search products. brands and categories">
-                  </div>
+                    <input 
+                      (keyup.enter)="onSearch()" 
+                      type="text" #search 
+                      class="form-control mr-1" 
+                      style="width: 380px;" 
+                      placeholder="Search products. brands and categories">
+                </div>
                 </div>
               </div>
               <ul class="view-mode">
                 <label>Sort By :</label>
                 <select (change)="onSortSelected($event.target.value)">
                   <option *ngFor="let sort of sortOptions" 
+                      [selected]="shopParams.sort === sort.value"
                       [value]="sort.value">
                       {{sort.name}}
                   </option>
@@ -135,6 +139,7 @@
             <app-pager
               [totalCount]="totalCount"
               [pageSize]="this.shopParams.pageSize"
+              [pageNumber]="shopParams.pageNumber"
               (pageChanged)="onPageChange($event)"
             ></app-pager>
           </div>
