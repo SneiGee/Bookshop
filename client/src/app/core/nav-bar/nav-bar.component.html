@@ -160,7 +160,7 @@
                                         <ul class="nav main-menu menu navbar-nav">
                                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/']" >Home</a></li>
                                                 <li routerLinkActive="active"><a [routerLink]="['/shop']" >Shop</a></li>
-                                                <li><a href="#">Pages</a></li>									
+                                                <li *ngIf="(isAdmin$ | async)" routerLinkActive="active"><a [routerLink]="['/admin']" >Admin</a></li>									
                                                 <li><a href="#">Blog<i class="ti-angle-down"></i><span class="new">New</span></a>
                                                     <ul class="dropdown">
                                                         <li><a href="#">Blog Single Sidebar</a></li>

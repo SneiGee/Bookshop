@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace API.Dto
 {
     public class ProductToReturnDto
@@ -9,5 +11,6 @@ namespace API.Dto
         public string PictureUrl { get; set; }
         public string ProductType { get; set; }
         public string ProductBrand { get; set; }
+        public IEnumerable<PhotoToReturnDto> Photos { get; set; }
     }
 }
