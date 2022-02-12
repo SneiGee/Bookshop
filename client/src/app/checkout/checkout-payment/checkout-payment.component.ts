@@ -84,7 +84,6 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
     try {
       const createdOrder = await this.createOrder(basket);
       const paymentResult = await this.confirmPaymentWithStripe(basket);
-
       if (paymentResult.paymentIntent) {
         this.basketService.deleteLocalBasket(basket.id);
         const navigationExtras: NavigationExtras = { state: createdOrder };
@@ -99,7 +98,7 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private async confirmPaymentWithStripe(basket: IBasket) {
+  private async confirmPaymentWithStripe(basket) {
     return this.stripe.confirmCardPayment(basket.clientSecret, {
       payment_method: {
         card: this.cardNumber,
@@ -109,11 +108,12 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
       }
     });
   }
-  
+
   private async createOrder(basket: IBasket) {
     const orderToCreate = this.getOrderToCreate(basket);
     return this.checkoutService.createOrder(orderToCreate).toPromise();
   }
+
 
   private getOrderToCreate(basket: IBasket) {
     return {

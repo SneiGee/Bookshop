@@ -17,7 +17,7 @@ export class BasketSummaryComponent implements OnInit {
   @Input() items: any;
   @Input() isOrder = false;
 
-  constructor(private basketService: BasketService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

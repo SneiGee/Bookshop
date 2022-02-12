@@ -1,4 +1,4 @@
-<ng-container *ngIf="items.length > 0" >
+<ng-container *ngIf="items.length > 0">
     <!-- Shopping Summery -->
     <table class="table shopping-summery">
         <thead [class.thead]="isBasket || isOrder">
@@ -13,9 +13,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of items">
-                <td class="image"><img src="{{item.pictureUrl}}" alt="#"></td>
+                <td class="image">
+                    <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid" style="max-height: 50px;">
+                </td>
                 <td class="product-des">
-                    <p class="product-name"><a routerLink="/shop/{{item.id || item.productId}}">{{item.productName}}</a></p>
+                    <p class="product-name"><a routerLink="/shop/{{item.id}}">{{item.productName}}</a></p>
                     <p *ngIf="item.type" class="product-Cate font-italic">
                         <span class="text-muted">Category:</span> {{item.brand}}
                     </p>

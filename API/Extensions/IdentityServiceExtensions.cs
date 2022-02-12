@@ -13,7 +13,11 @@ namespace API.Extensions
     {
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration config)
         {
-            var builder = services.AddIdentityCore<AppUser>();
+            var builder = services.AddIdentityCore<AppUser>(opt => {
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireUppercase = false;
+            });
 
             builder = new IdentityBuilder(builder.UserType, typeof(AppRole), builder.Services);
             builder.AddEntityFrameworkStores<AppIdentityDbContext>();

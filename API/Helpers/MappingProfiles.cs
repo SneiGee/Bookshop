@@ -11,9 +11,9 @@ namespace API.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
-                .ForMember(s => s.ProductBrand, d => d.MapFrom(m => m.ProductBrand.Name))
-                .ForMember(s => s.ProductType, d => d.MapFrom(m => m.ProductType.Name))
-                .ForMember(s => s.PictureUrl, d => d.MapFrom<ProductUrlResolver>());
+                .ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.ProductBrand.Name))
+                .ForMember(d => d.ProductType, o => o.MapFrom(s => s.ProductType.Name))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());
             CreateMap<Core.Entities.Identity.Address, AddressDto>().ReverseMap();
             CreateMap<CustomerBasketDto, CustomerBasket>();
             CreateMap<BasketItemDto, BasketItem>();
@@ -27,8 +27,9 @@ namespace API.Helpers
                 .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.ItemOrdered.PictureUrl))
                 .ForMember(d => d.PictureUrl, o => o.MapFrom<OrderItemUrlResolver>());
             CreateMap<ProductCreateDto, Product>();
-            CreateMap<Photo, PhotoToReturnDto>().ForMember(d => d.PictureUrl, 
-                o => o.MapFrom<PhotoUrlResolver>());
+            CreateMap<Photo, PhotoToReturnDto>()
+                .ForMember(d => d.PictureUrl, 
+                    o => o.MapFrom<PhotoUrlResolver>());
         }
     }
 }
